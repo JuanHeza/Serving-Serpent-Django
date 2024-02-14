@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    {% load pwa %}
+    <link rel="manifiest" href="manifest.json">
+    <head>
+    {% progressive_web_app_meta %}
+        <title> PWA</title>
+    </head>
+    <body>
+        <h1>PWA</h1>
+        
+    </body>
+    <script>
+        window.addEventListener('beforeunload', function(){
+
+            console.log("closing")
+            event.preventDefault();
+            event.returnValue = '';  
+        })
+    </script>
+</html>

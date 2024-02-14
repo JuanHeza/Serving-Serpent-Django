@@ -1,0 +1,9 @@
+<html>
+    <p>HOLA</p>
+    {% for producto in productos %} 
+    <article>
+        <h2>Name: {{ producto.name }}</h2>
+        <a href="{% url 'get_product' id=producto.id %}"> Visit </a>
+    </article>
+    {% endfor %}
+</html>

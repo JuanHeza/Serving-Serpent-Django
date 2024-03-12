@@ -52,7 +52,7 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["productsapp/templates"],
+        'DIRS': ["templates", "productsapp/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,13 +69,6 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -135,7 +128,10 @@ PWA_APP_SCOPE = '/'
 PWA_APP_ORIENTATION = 'any'
 PWA_APP_START_URL = '/'
 PWA_APP_STATUS_BAR_COLOR = 'default'
-PWA_APP_ICONS = [{'src': '/static/images/icon-160x160.png', 'sizes': '160x160'}]
+PWA_APP_ICONS = [{
+    'src': '/static/images/icon-160x160.png',
+    'sizes': '160x160'
+}]
 PWA_APP_ICONS_APPLE = [{
     'src': '/static/images/icon-160x160.png',
     'sizes': '160x160'
@@ -163,3 +159,5 @@ PWA_APP_SCREENSHOTS = [{
     'sizes': '750x1334',
     "type": "image/png"
 }]
+
+LOGIN_REDIRECT_URL = "/"
